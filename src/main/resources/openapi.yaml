@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Kubsei Users API
+  description: Authentication and user accounts. Exposed to clients through kubsei-gateway.
+  version: 0.1.0
+servers:
+  - url: http://localhost:3001
+    description: Local gateway
+tags:
+  - name: Auth
+    description: Register, login and token lifecycle
+  - name: Users
+    description: User accounts
+security:
+  - bearerAuth: []
+paths:
+  /api/auth/register:
+    $ref: "./openapi/paths/register.yaml"
+  /api/auth/login:
+    $ref: "./openapi/paths/login.yaml"
+  /api/auth/refresh:
+    $ref: "./openapi/paths/refresh.yaml"
+  /api/auth/logout:
+    $ref: "./openapi/paths/logout.yaml"
+  /api/auth/logout-all:
+    $ref: "./openapi/paths/logout_all.yaml"
+  /api/users/me:
+    $ref: "./openapi/paths/users_me.yaml"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

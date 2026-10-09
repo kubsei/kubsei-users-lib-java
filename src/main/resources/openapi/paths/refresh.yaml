@@ -1,0 +1,22 @@
+post:
+  tags: [Auth]
+  operationId: refreshToken
+  description: Rotates the refresh token. The one sent is revoked.
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/RefreshTokenRequest.yaml"
+  responses:
+    '200':
+      description: New token pair
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/AuthResponse.yaml"
+    '400':
+      $ref: "../responses/BadRequest.yaml"
+    '401':
+      $ref: "../responses/Unauthorized.yaml"

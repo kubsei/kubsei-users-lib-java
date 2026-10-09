@@ -1,0 +1,30 @@
+type: object
+required: [id, email, name, roles, provider, emailVerified, createdAt]
+properties:
+  id:
+    type: string
+  email:
+    type: string
+    format: email
+  name:
+    type: string
+  avatarUrl:
+    type: string
+  roles:
+    type: array
+    uniqueItems: true
+    items:
+      $ref: "./Role.yaml"
+  provider:
+    $ref: "./AuthProvider.yaml"
+  emailVerified:
+    type: boolean
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+  lastLoginAt:
+    type: string
+    format: date-time

@@ -1,0 +1,9 @@
+post:
+  tags: [Auth]
+  operationId: logoutAll
+  description: Revokes every refresh token of the current user.
+  responses:
+    '204':
+      description: Tokens revoked
+    '401':
+      $ref: "../responses/Unauthorized.yaml"

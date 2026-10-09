@@ -1,0 +1,12 @@
+get:
+  tags: [Users]
+  operationId: getCurrentUser
+  responses:
+    '200':
+      description: Current user
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/User.yaml"
+    '401':
+      $ref: "../responses/Unauthorized.yaml"

@@ -1,0 +1,13 @@
+description: RFC 9457 problem details
+type: object
+properties:
+  type:
+    type: string
+  title:
+    type: string
+  status:
+    type: integer
+  detail:
+    type: string
+  instance:
+    type: string

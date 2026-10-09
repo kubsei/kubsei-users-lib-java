@@ -1,0 +1,21 @@
+post:
+  tags: [Auth]
+  operationId: register
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/RegisterRequest.yaml"
+  responses:
+    '201':
+      description: User created and logged in
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/AuthResponse.yaml"
+    '400':
+      $ref: "../responses/BadRequest.yaml"
+    '409':
+      $ref: "../responses/Conflict.yaml"

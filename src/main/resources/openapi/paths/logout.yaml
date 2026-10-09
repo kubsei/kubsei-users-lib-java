@@ -1,0 +1,16 @@
+post:
+  tags: [Auth]
+  operationId: logout
+  description: Revokes one refresh token.
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/RefreshTokenRequest.yaml"
+  responses:
+    '204':
+      description: Token revoked
+    '400':
+      $ref: "../responses/BadRequest.yaml"

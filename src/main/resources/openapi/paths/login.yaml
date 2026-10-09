@@ -1,0 +1,21 @@
+post:
+  tags: [Auth]
+  operationId: login
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/LoginRequest.yaml"
+  responses:
+    '200':
+      description: Logged in
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/AuthResponse.yaml"
+    '400':
+      $ref: "../responses/BadRequest.yaml"
+    '401':
+      $ref: "../responses/Unauthorized.yaml"
