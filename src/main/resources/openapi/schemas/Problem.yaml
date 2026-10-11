@@ -11,3 +11,9 @@ properties:
     type: string
   instance:
     type: string
+  code:
+    type: string
+    description: >
+      Stable error code for clients to translate; detail is for developers.
+      INVALID_CREDENTIALS, USE_PROVIDER (account created with Google), ACCOUNT_DISABLED,
+      EMAIL_TAKEN, SESSION_EXPIRED. Absent on framework errors such as validation (400).
